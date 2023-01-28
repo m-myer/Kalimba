@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- Using script to import the JSON starting files -->
+    <script src="./starting-files/artists.json"></script>
+    <script src="./starting-files/genres.json"></script>
+    <script src="./starting-files/sample-songs.json"></script>
+
+    <script src="./js/kalimba.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Kalimba</title>
+</head>
+
+<body class="black-background-gradient main-font-family">
+
+    <header class="silver-border margin-right-5px margin-left-5px">
+        <div id="button-container">
+            <button id="playlist-button" class="main-font-family round-corners top-button-margin top-button-padding font-30">playlist</button>
+            <button id="close-view-button" class="main-font-family round-corners top-button-margin top-button-padding font-30 hidden">close view</button>
+            <button id="credits-button" class="main-font-family round-corners top-button-margin top-button-padding font-30">credits</button>
+        </div>
+
+    </header>
+
+    <div id="credits-details" class="hidden">
+        Group Members: <br>
+        Andrew Walsh<br>
+        Michael Myer<br>
+        <br>
+        github link: https://github.com/awals829/Asg2
+    </div>
+
+     <!-- Browse page for songs -->
+    <section id="browse" class = "">
+
+        <div id="search" class="purple-background-gradient margin-right-5px margin-left-5px">
+            <form>
+                <h1 id="search-header" class="padding-bottom-25">Find a Song</h1>
+                
+                <input type="radio" id="title" class="radio-button" name="filters" value="Song-Title-Filter" checked><label for="title">Title:</label></input>
+                <input id="Song-Title-Filter" class="filter-parameter padding-bottom-25" placeholder="Song Title"><br>
+                
+                <input type="radio" id="artist"  class="radio-button" name="filters" value="Select-Artist-Filter"><label for="artist">Artist:</label></input>
+                <select id="Select-Artist-Filter" class="filter-parameter padding-bottom-25" disabled><option value="">Select Artist</option></select><br>
+                
+                <input type="radio" id="genre"  class="radio-button" name="filters" value="Select-Genre-Filter"><label for="genre">Genre:</label></input>
+                <select id="Select-Genre-Filter" class="filter-parameter padding-bottom-25" disabled><option value="">Select Genre</option></select><br>
+                <div id="search-form-buttons">
+                    <input id="clear" type="submit" class="round-corners" value="Clear">
+                    <input id="submit" type="submit" class="round-corners" value="Submit">
+                </div>
+
+            </form>
+        </div>
+
+        <div id="results" class="purple-background-gradient margin-right-5px margin-left-5px">
+            <div id="results-table-headers">
+                <h1 id="results-header">Search Results</h1>
+                <ul>
+                    <li class="title-header category no-bold no-padding" value="title" data-view="browse">Title</li>
+                    <li class="artist-header category no-bold no-padding" value="artist" data-view="browse">Artist</li>
+                    <li class="year-header category no-bold no-padding" value="year" data-view="browse">Year</li>
+                    <li class="genre-header category no-bold no-padding" value="genre" data-view="browse">Genre</li>
+                    <li class="popularity-header category no-bold no-padding" value="popularity" data-view="browse">Popularity</li>
+                    <li><button id="browse-sort-button" class="round-corners sort-button" value="Ascending">Ascending</button></li>
+                </ul>
+            </div>
+            <div id="search-results">
+                
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Playlist view page -->
+    <section id="playlist-view" class="hidden">
+        
+        <div id="playlist-details" class="purple-background-gradient margin-right-5px margin-left-5px">
+            <h1 id="playlist-details-header">Playlist Details</h1>
+    
+            <div>
+                <label># Songs:</label><p id="playlist-song-count"></p>
+                <label>Popularity Ranking:</label><p id="popularity-ranking"></p>
+            </div>
+            
+            <button id="clear-playlist-button" class="round-corners">Clear Playlist</button>
+        </div>
+        <div id="playlist-results" class="purple-background-gradient margin-right-5px margin-left-5px">
+            <div id="playlist-table-headers">
+                <h1 id="playlist-header">Playlist</h1>
+                <ul>
+                    <li class="title-header category no-bold no-padding" value="title" data-view="playlist">Title</li>
+                    <li class="artist-header category no-bold no-padding" value="artist" data-view="playlist">Artist</li>
+                    <li class="year-header category no-bold no-padding" value="year" data-view="playlist">Year</li>
+                    <li class="genre-header category no-bold no-padding" value="genre" data-view="playlist">Genre</li>
+                    <li class="popularity-header category no-bold no-padding" value="popularity" data-view="playlist">Popularity</li>
+                    <li><button id="playlist-sort-button" class="round-corners sort-button" value="Ascending">Ascending</button></li>
+                </ul>
+            </div>
+            <div id="playlist-data"></div>
+        </div>
+        
+    </section>
+
+
+    <!-- Single song view page -->
+    <section id="song-view" class="hidden">
+        
+        <div id="song-info" class="purple-background-gradient margin-right-5px margin-left-5px">
+            <h1 id="song-info-header" class="no-bold">Song Information</h1>
+            
+            <div id="song-details">
+                <ul id="song-details-content"></ul>
+            </div>
+            
+            <h2 id="song-analysis-header" class="no-bold">Analysis Data</h2>
+            <div id="song-analysis-data">
+                <ul id="song-analysis-content"></ul>
+             </div>
+            
+        </div>
+
+        <div id="chart-section" class="purple-background-gradient">
+            <div id="radar-chart" class="purple-background-gradient margin-right-5px margin-left-5px">
+                <canvas id="myChart" width="800" height="800"></canvas>
+            </div>
+        </div>  
+        
+    </section>
+
+    <footer class="silver-border no-margin">
+        <p>copyright &copy Mildred Industries</p>
+    </footer>
+
+</body>
+
+</html>

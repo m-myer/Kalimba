@@ -1,0 +1,391 @@
+/*
+    #####################################
+    #       CSS ELEMENT SELECTORS       #
+    #####################################
+*/
+body {
+    background-color: rgb(43, 44, 58); /* 1st Colour */
+    padding: 0px;
+    color: #dcd6f7; /* 5th Colour */
+}
+
+header {
+    background-image: url(../images/kalimba.png);
+    background-size: 230px;
+    background-repeat: no-repeat;
+    min-height: 125px;
+    text-align: right;
+    margin-left: 20px;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 275px 1fr;
+    padding: 0px;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+    font-size: 18px;
+}
+
+table {
+    display: block;
+}
+
+tbody {
+    display: flex;
+    width: 100%;
+}
+
+tr {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+    padding: 0px;
+}
+
+li {
+    display: inline-block;
+    font-family: 'Georgia', Times, serif;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+
+/*
+    ###################################
+    #       CSS CLASS SELECTORS       #
+    ###################################
+*/
+li.song-title, li.title-header  {
+    width: 40%;
+    text-align: left;
+}
+li.title-header {
+    font-size: 30px;
+}
+
+
+li.song-artist, li.artist-header {
+    width: 15%;
+    text-align: left;
+}
+li.artist-header {
+    font-size: 30px;
+}
+
+
+li.song-year, li.year-header {
+    width: 15%;
+    text-align: left;
+}
+li.year-header  {
+    font-size: 30px;
+}
+
+
+li.song-genre, li.genre-header {
+    width: 10%;
+    text-align: left;
+}
+li.genre-header {
+    font-size: 30px;
+}
+
+
+li.song-popularity, li.popularity-header {
+    width: 15%;
+    text-align: left;
+}
+li.popularity-header {
+    font-size: 30px;
+}
+
+
+li.button {
+    width: 15%;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.main-font-family {
+    font-family: 'Haettenschweiler', sans-serif;
+}
+
+.song-button {
+    color: #dcd6f7; /* 5th Colour */
+    background-color: #6b728e; /* 4th Colour */
+    width: 100px;
+    padding: 0px;
+    border: none;
+}
+
+.song-button:hover {
+    color: #2b2c3a; /* Hover Colour */
+    transform: scale(1.10);
+}
+
+.round-corners {
+    border-radius: 10px;
+}
+
+.top-button-padding {
+    padding: 15px;
+    padding-top: 10px;
+}
+
+.top-button-margin {
+    margin: 25px;
+}
+
+.font-30 {
+    font-size: 30px;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.margin-top-5px{
+    margin: 5px, 0, 0, 0;
+}
+
+.margin-right-5px{
+    margin: 0, 5px, 0, 0;
+}
+
+.margin-bottom-5px{
+    margin: 0, 0, 5px, 0;
+}
+
+.margin-left-5px{
+    margin: 0, 0, 0, 5px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.no-bold {
+    font-weight: normal;
+}
+
+.center-text-width {
+    justify-self: center;
+}
+
+.padding-bottom-15 {
+    margin-bottom: 15px;
+}
+
+.padding-bottom-25 {
+    margin-bottom: 25px;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.selected-colour {
+    color: #2b2c3a; /* Header Selected Colour */
+    /* text-shadow: h-shadow v-shadow blur-radius color|none|initial|inherit */
+    text-shadow: 2px 4px 6px #363749;
+}
+
+.progress-bar {
+    width: 90%;
+    background-color: rgba(220, 214, 247, 0.3);
+    align-self: center;
+    margin-left: 15px;
+}
+
+.progress-level {
+    width: 1%;
+    height: 30px;
+    background-color: #2b2c3a;
+}
+
+.song-title:hover {
+    color: #dcd6f7; /* Song Title Hover Colour */
+    cursor: pointer;
+}
+
+/*
+    ################################
+    #       CSS ID SELECTORS       #
+    ################################
+*/
+
+
+
+#search, #playlist-details {
+    background-color: #474e68;
+    font-family: 'Georgia', Times, serif;
+    grid-column: 1;
+    min-height: 500px;
+    padding: 8px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+#playlist-details {
+    background-color: #474e68;
+    font-family: 'Georgia', Times, serif;
+    border-radius: 10px;
+}
+
+#results, #playlist-results {
+    background-color: #474e68;
+    margin: 0px 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#search-results, #playlist-data {
+    color: #b6b1cc; /* Text Colour */
+}
+
+#results-header, #playlist-header {
+    font-size: 75px;
+    font-weight: normal;
+    margin: 10px;
+}
+
+#results-table-headers, #playlist-table-headers {
+    font-size: 30px;
+    font-weight: normal;
+    margin: 0px;
+}
+
+#credits-button {
+    position: absolute;
+    color: #dcd6f7; /* 5th Colour */
+    right: 10px;
+    background-color: #6b728e; /* 4th Colour */
+}
+
+#credits-details {
+    position: absolute;
+    top: 20%;
+    left: 70%;
+    height: 250px;
+    width: 25%;
+    background-color:rgba(43, 44, 58, 0.75);
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 5px;
+
+}
+
+#playlist-button, #close-view-button {
+    position: absolute;
+    right: 125px;
+    color: #dcd6f7; /* 5th Color */
+    background-color: #6b728e; /* 4th Color */
+}
+
+#playlist-button:hover, #close-view-button:hover {
+    color: rgba(63, 59, 108, 1);
+}
+
+#clear, #submit {
+    width: 60px;
+    margin: 0px 10px;
+}
+
+#chart-section {
+    background-color: #474e68;;
+    display: inline-block;
+    width: 100%;
+    align-content: center;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+#radar-chart {
+    width: 800px;
+    height: 800px;
+    margin: auto;
+}
+
+#song-details-content, #song-analysis-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+}
+
+#song-info {
+    background-color: #474e68;;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#song-title-filter {
+    background-color:#ecddf0;
+    border: none;
+}
+
+table#headers {
+    overflow-y: auto;
+    margin: 0 auto;
+    width: 90%;
+}
+
+table#search-data{
+    overflow-y: auto;
+    margin: 0 auto;
+    width: 90%;
+}
+div#search-results, div#playlist-data {
+    background-color: linear-gradient( 45deg, rgba(98,79,130,1), 85%, rgba(163,199,214,1.2)) fixed;
+    overflow-y: scroll;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-right: 10px;
+    height: 600px;
+    border: #ecddf0 groove 4px;
+    border-radius: 10px;
+
+}
+
+div#search-form-buttons {
+    text-align: center;
+}
+
+#browse-sort-button, #playlist-sort-button {
+    color: rgb(220, 214, 247); /* 5th Colour */
+    background-color: #6b728e; /* 4th Colour */
+    margin-right: 30px;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    padding: 0px;
+    border: none;
+}
+
+#browse-sort-button:hover, #playlist-sort-button:hover {
+    color: #2b2c3a; /* Hover Colour */
+    transform: scale(1.10);
+}
+
+
+#song-details-content li, #song-analysis-data li {
+    padding: 0;
+}
